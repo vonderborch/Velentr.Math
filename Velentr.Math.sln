@@ -1,13 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31424.327
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Velentr.Math", "Velentr.Math\Velentr.Math.csproj", "{880640E5-C308-4316-A5BD-BCD1F82AE7AC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Velentr.Math.DevEnv", "Velentr.Math.DevEnv\Velentr.Math.DevEnv.csproj", "{A327F071-83C6-4B0A-BF35-668E1FE44BA1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Velentr.Math.Test", "Velentr.Math.Test\Velentr.Math.Test.csproj", "{FAED4A93-05B2-4854-91AF-15D18802E9BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{63A45EB3-92EC-4BA5-B7EE-B228374FF6FC}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,7 +7,7 @@ namespace Velentr.Math.DevEnv
     class Program
     {
         static void Main(string[] args)
-        {
+         {
             FPL4 a1 = 3.501;
             FPL6 a2 = 3.5012;
             FPL6 a3 = 3.50125;

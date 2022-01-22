@@ -6,6 +6,12 @@
         public FPL4 X;
         public FPL4 Y;
 
+        public FPL4Vector2(FPL4 X, FPL4 Y)
+        {
+            this.X = X;
+            this.Y = Y;
+        }
+
         public static FPL4Vector2 Create(FPL4 X, FPL4 Y)
         {
             FPL4Vector2 result;

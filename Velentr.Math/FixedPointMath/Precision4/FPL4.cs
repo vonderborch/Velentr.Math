@@ -18,7 +18,7 @@ namespace Velentr.Math.FixedPointMath.Precision4
 
         public const int OneInt = 1 << Shift;
 
-        public static FPL4 OneD4 = FPL4.CreateFromLong(1);
+        public static FPL4 OneFPL4 = FPL4.CreateFromLong(1);
 
         public static FPL4 MaxValue = FPL4.CreateFromLong(long.MaxValue, false);
 
@@ -47,7 +47,7 @@ namespace Velentr.Math.FixedPointMath.Precision4
             else if (rawValue <= (long.MaxValue << Shift) && rawValue >= (long.MinValue << Shift))
                 result.RawValue = (long)System.Math.Round(rawValue * (double)OneLong);
             else
-                throw new InvalidCastException("Unable to convert double to D4, out-of-range!");
+                throw new InvalidCastException("Unable to convert double to FPL4, out-of-range!");
             return result;
         }
 
@@ -59,7 +59,7 @@ namespace Velentr.Math.FixedPointMath.Precision4
             else if (rawValue <= (long.MaxValue << Shift) && rawValue >= (long.MinValue << Shift))
                 result.RawValue = (long)System.Math.Round(rawValue * (float)OneLong);
             else
-                throw new InvalidCastException("Unable to convert float to D4, out-of-range!");
+                throw new InvalidCastException("Unable to convert float to FPL4, out-of-range!");
             return result;
         }
 

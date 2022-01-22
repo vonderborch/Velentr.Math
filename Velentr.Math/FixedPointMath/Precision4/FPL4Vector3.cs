@@ -7,6 +7,13 @@
         public FPL4 Y;
         public FPL4 Z;
 
+        public FPL4Vector3(FPL4 X, FPL4 Y, FPL4 Z)
+        {
+            this.X = X;
+            this.Y = Y;
+            this.Z = Z;
+        }
+
         public static FPL4Vector3 Create(FPL4 X, FPL4 Y, FPL4 Z)
         {
             FPL4Vector3 result;

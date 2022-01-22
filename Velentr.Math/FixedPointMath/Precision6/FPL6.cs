@@ -18,7 +18,7 @@ namespace Velentr.Math.FixedPointMath.Precision6
 
         public const int OneInt = 1 << Shift;
 
-        public static FPL6 OneD4 = FPL6.CreateFromLong(1);
+        public static FPL6 OneFPL6 = FPL6.CreateFromLong(1);
 
         public static FPL6 MaxValue = FPL6.CreateFromLong(long.MaxValue, false);
 
@@ -47,7 +47,7 @@ namespace Velentr.Math.FixedPointMath.Precision6
             else if (rawValue <= (long.MaxValue << Shift) && rawValue >= (long.MinValue << Shift))
                 result.RawValue = (long)System.Math.Round(rawValue * (double)OneLong);
             else
-                throw new InvalidCastException("Unable to convert double to D4, out-of-range!");
+                throw new InvalidCastException("Unable to convert double to FPL6, out-of-range!");
             return result;
         }
 
@@ -59,7 +59,7 @@ namespace Velentr.Math.FixedPointMath.Precision6
             else if (rawValue <= (long.MaxValue << Shift) && rawValue >= (long.MinValue << Shift))
                 result.RawValue = (long)System.Math.Round(rawValue * (float)OneLong);
             else
-                throw new InvalidCastException("Unable to convert float to D4, out-of-range!");
+                throw new InvalidCastException("Unable to convert float to FPL6, out-of-range!");
             return result;
         }
 
