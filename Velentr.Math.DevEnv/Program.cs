@@ -1,13 +1,12 @@
-﻿using System;
-using Velentr.Math.FixedPointMath.Precision4;
+﻿using Velentr.Math.FixedPointMath.Precision4;
 using Velentr.Math.FixedPointMath.Precision6;
 
 namespace Velentr.Math.DevEnv
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
-         {
+        private static void Main(string[] args)
+        {
             FPL4 a1 = 3.501;
             FPL6 a2 = 3.5012;
             FPL6 a3 = 3.50125;

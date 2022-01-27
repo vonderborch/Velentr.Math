@@ -23,108 +23,168 @@ using Velentr.Math.FixedPointMath.Precision6;
 
 namespace Velentr.Math.Random
 {
+    /// <summary>
+    /// An abstract random generator.
+    /// </summary>
     public abstract class AbstractRandomGenerator
     {
+        /// <summary>
+        /// Gets a short.
+        /// </summary>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The short.
+        /// </returns>
         public virtual short GetShort(short minimum = short.MinValue, short maximum = short.MaxValue)
         {
             return System.Convert.ToInt16(GetNormal() * (maximum - minimum) + minimum);
         }
+
+        /// <summary>
+        /// Gets u short.
+        /// </summary>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The u short.
+        /// </returns>
         public virtual ushort GetUShort(ushort minimum = ushort.MinValue, ushort maximum = ushort.MaxValue)
         {
             return System.Convert.ToUInt16(GetNormal() * (maximum - minimum) + minimum);
         }
+
         /// <summary>
-        /// 
+        /// Gets a byte.
         /// </summary>
-        /// <param name="minimum"></param>
-        /// <param name="maximum"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The byte.
+        /// </returns>
         public virtual byte GetByte(byte minimum = byte.MinValue, byte maximum = byte.MaxValue)
         {
             return System.Convert.ToByte(GetNormal() * (maximum - minimum) + minimum);
         }
 
         /// <summary>
-        /// 
+        /// Gets the bool.
         /// </summary>
-        /// <returns></returns>
+        ///
+        /// <returns>
+        /// True if it succeeds, false if it fails.
+        /// </returns>
         public virtual bool GetBool()
         {
             return GetUniform() < 0.5d;
         }
 
         /// <summary>
-        /// 
+        /// Gets u int.
         /// </summary>
-        /// <param name="minimum"></param>
-        /// <param name="maximum"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The u int.
+        /// </returns>
         public virtual uint GetUInt(uint minimum = uint.MinValue, uint maximum = uint.MaxValue)
         {
             return System.Convert.ToUInt32(GetNormal() * (maximum - minimum) + minimum);
         }
 
         /// <summary>
-        /// 
+        /// Gets an int.
         /// </summary>
-        /// <param name="minimum"></param>
-        /// <param name="maximum"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The int.
+        /// </returns>
         public virtual int GetInt(int minimum = int.MinValue, int maximum = int.MaxValue)
         {
             return System.Convert.ToInt32(GetNormal() * (maximum - minimum) + minimum);
         }
 
         /// <summary>
-        /// 
+        /// Gets a long.
         /// </summary>
-        /// <param name="minimum"></param>
-        /// <param name="maximum"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The long.
+        /// </returns>
         public virtual long GetLong(long minimum = long.MinValue, long maximum = long.MaxValue)
         {
             return System.Convert.ToInt64(GetNormal() * (maximum - minimum) + minimum);
         }
 
         /// <summary>
-        /// 
+        /// Gets u long.
         /// </summary>
-        /// <param name="minimum"></param>
-        /// <param name="maximum"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The u long.
+        /// </returns>
         public virtual ulong GetULong(ulong minimum = ulong.MinValue, ulong maximum = ulong.MaxValue)
         {
             return System.Convert.ToUInt64(GetNormal() * (maximum - minimum) + minimum);
         }
 
         /// <summary>
-        /// 
+        /// Gets a double.
         /// </summary>
-        /// <param name="minimum"></param>
-        /// <param name="maximum"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The double.
+        /// </returns>
         public virtual double GetDouble(double minimum = double.MinValue, double maximum = double.MaxValue)
         {
             return System.Convert.ToDouble(GetNormal() * (maximum - minimum) + minimum);
         }
 
         /// <summary>
-        /// 
+        /// Gets a float.
         /// </summary>
-        /// <param name="minimum"></param>
-        /// <param name="maximum"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The float.
+        /// </returns>
         public virtual float GetFloat(float minimum = float.MinValue, float maximum = float.MaxValue)
         {
             return (float)System.Convert.ToDouble(GetNormal() * (maximum - minimum) + minimum);
         }
 
         /// <summary>
-        /// 
+        /// Gets fpl 4.
         /// </summary>
-        /// <param name="minimum"></param>
-        /// <param name="maximum"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The fpl 4.
+        /// </returns>
         public FPL4 GetFPL4(FPL4? minimum = null, FPL4? maximum = null)
         {
             minimum = minimum ?? FPL4.MinValue;
@@ -133,11 +193,15 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// 
+        /// Gets fpl 6.
         /// </summary>
-        /// <param name="minimum"></param>
-        /// <param name="maximum"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// The fpl 6.
+        /// </returns>
         public FPL6 GetFPL6(FPL6? minimum = null, FPL6? maximum = null)
         {
             minimum = minimum ?? FPL6.MinValue;
@@ -146,11 +210,13 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// Produce a uniform random sample from the open interval (0, 1).
-        /// The method will not return either end point.
+        /// Produce a uniform random sample from the open interval (0, 1). The method will not return
+        /// either end point.
         /// </summary>
-        /// <returns>A random number between 0 and 1</returns>
-        /// (JDC 2008)
+        ///
+        /// <returns>
+        /// A random number between 0 and 1.
+        /// </returns>
         public double GetUniform()
         {
             // 0 <= u < 2^32
@@ -161,12 +227,18 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// Get normal (Gaussian) random sample with specified mean and standard deviation
+        /// Get normal (Gaussian) random sample with specified mean and standard deviation.
         /// </summary>
-        /// <param name="mean"></param>
-        /// <param name="standardDeviation"></param>
-        /// <returns></returns>
-        /// (JDC 2008)
+        ///
+        /// <exception cref="ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+        ///                                                 the required range. </exception>
+        ///
+        /// <param name="mean">                 (Optional) </param>
+        /// <param name="standardDeviation">    (Optional) </param>
+        ///
+        /// <returns>
+        /// The normal.
+        /// </returns>
         public double GetNormal(double mean = 0, double standardDeviation = 1)
         {
             if (standardDeviation <= 0.0)
@@ -183,12 +255,17 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// Get exponential random sample with specified mean
+        /// Get exponential random sample with specified mean.
         /// </summary>
-        /// <param name="mean"></param>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        /// (JDC 2008)
+        ///
+        /// <exception cref="ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+        ///                                                 the required range. </exception>
+        ///
+        /// <param name="mean"> (Optional) </param>
+        ///
+        /// <returns>
+        /// The exponential.
+        /// </returns>
         public double GetExponential(double mean = 1)
         {
             if (mean <= 0.0)
@@ -200,14 +277,20 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// Implementation based on "A Simple Method for Generating Gamma Variables"
-        /// by George Marsaglia and Wai Wan Tsang.  ACM Transactions on Mathematical Software
-        /// Vol 26, No 3, September 2000, pages 363-372.
+        /// Implementation based on "A Simple Method for Generating Gamma Variables" by George Marsaglia
+        /// and Wai Wan Tsang.  ACM Transactions on Mathematical Software Vol 26, No 3, September 2000,
+        /// pages 363-372.
         /// </summary>
-        /// <param name="shape"></param>
-        /// <param name="scale"></param>
-        /// <returns></returns>
-        /// (JDC 2008)
+        ///
+        /// <exception cref="ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+        ///                                                 the required range. </exception>
+        ///
+        /// <param name="shape">    . </param>
+        /// <param name="scale">    . </param>
+        ///
+        /// <returns>
+        /// The gamma.
+        /// </returns>
         public double GetGamma(double shape, double scale)
         {
             if (shape <= 0.0)
@@ -246,12 +329,15 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// A chi squared distribution with n degrees of freedom
-        /// is a gamma distribution with shape n/2 and scale 2.
+        /// A chi squared distribution with n degrees of freedom is a gamma distribution with shape n/2
+        /// and scale 2.
         /// </summary>
-        /// <param name="degreesOfFreedom"></param>
-        /// <returns></returns>
-        /// (JDC 2008)
+        ///
+        /// <param name="degreesOfFreedom"> . </param>
+        ///
+        /// <returns>
+        /// The chi square.
+        /// </returns>
         public double GetChiSquare(double degreesOfFreedom)
         {
             return GetGamma(0.5 * degreesOfFreedom, 2.0);
@@ -261,22 +347,31 @@ namespace Velentr.Math.Random
         /// If X is gamma(shape, scale) then
         /// 1/Y is inverse gamma(shape, 1/scale)
         /// </summary>
-        /// <param name="shape"></param>
-        /// <param name="scale"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="shape">    . </param>
+        /// <param name="scale">    . </param>
+        ///
+        /// <returns>
+        /// The inverse gamma.
+        /// </returns>
         public double GetInverseGamma(double shape, double scale)
         {
             return 1.0 / GetGamma(shape, 1.0 / scale);
         }
 
         /// <summary>
-        /// 
+        /// Gets a weibull.
         /// </summary>
-        /// <param name="shape"></param>
-        /// <param name="scale"></param>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        /// (JDC 2008)
+        ///
+        /// <exception cref="ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+        ///                                                 the required range. </exception>
+        ///
+        /// <param name="shape">    . </param>
+        /// <param name="scale">    . </param>
+        ///
+        /// <returns>
+        /// The weibull.
+        /// </returns>
         public double GetWeibull(double shape, double scale)
         {
             if (shape <= 0.0 || scale <= 0.0)
@@ -287,13 +382,18 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// 
+        /// Gets a cauchy.
         /// </summary>
-        /// <param name="median"></param>
-        /// <param name="scale"></param>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentException"></exception>
-        /// (JDC 2008)
+        ///
+        /// <exception cref="ArgumentException">    Thrown when one or more arguments have unsupported or
+        ///                                         illegal values. </exception>
+        ///
+        /// <param name="median">   . </param>
+        /// <param name="scale">    . </param>
+        ///
+        /// <returns>
+        /// The cauchy.
+        /// </returns>
         public double GetCauchy(double median, double scale)
         {
             if (scale <= 0)
@@ -307,12 +407,17 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// See Seminumerical Algorithms by Knuth
+        /// See Seminumerical Algorithms by Knuth.
         /// </summary>
-        /// <param name="degreesOfFreedom"></param>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentException"></exception>
-        /// (JDC 2008)
+        ///
+        /// <exception cref="ArgumentException">    Thrown when one or more arguments have unsupported or
+        ///                                         illegal values. </exception>
+        ///
+        /// <param name="degreesOfFreedom"> . </param>
+        ///
+        /// <returns>
+        /// The student.
+        /// </returns>
         public double GetStudentT(double degreesOfFreedom)
         {
             if (degreesOfFreedom <= 0)
@@ -328,10 +433,13 @@ namespace Velentr.Math.Random
         /// <summary>
         /// The Laplace distribution is also known as the double exponential distribution.
         /// </summary>
-        /// <param name="mean"></param>
-        /// <param name="scale"></param>
-        /// <returns></returns>
-        /// (JDC 2008)
+        ///
+        /// <param name="mean">     . </param>
+        /// <param name="scale">    . </param>
+        ///
+        /// <returns>
+        /// The laplace.
+        /// </returns>
         public double GetLaplace(double mean, double scale)
         {
             double u = GetUniform();
@@ -341,25 +449,33 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// Get a random normally distributed log
+        /// Get a random normally distributed log.
         /// </summary>
-        /// <param name="mu"></param>
-        /// <param name="sigma"></param>
-        /// <returns></returns>
-        /// (JDC 2008)
+        ///
+        /// <param name="mu">       . </param>
+        /// <param name="sigma">    . </param>
+        ///
+        /// <returns>
+        /// The log normal.
+        /// </returns>
         public double GetLogNormal(double mu, double sigma)
         {
             return System.Math.Exp(GetNormal(mu, sigma));
         }
 
         /// <summary>
-        /// Generate a beta sample
+        /// Generate a beta sample.
         /// </summary>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        /// (JDC 2008)
+        ///
+        /// <exception cref="ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+        ///                                                 the required range. </exception>
+        ///
+        /// <param name="a">    . </param>
+        /// <param name="b">    . </param>
+        ///
+        /// <returns>
+        /// The beta.
+        /// </returns>
         public double GetBeta(double a, double b)
         {
             if (a <= 0.0 || b <= 0.0)
@@ -380,7 +496,8 @@ namespace Velentr.Math.Random
         /// <summary>
         /// Advance a certain number of steps in the random generator.
         /// </summary>
-        /// <param name="steps">The number of steps to advance</param>
+        ///
+        /// <param name="steps">    The number of steps to advance. </param>
         public void Advance(uint steps)
         {
             for (int i = 0; i < steps; i++)
@@ -392,17 +509,24 @@ namespace Velentr.Math.Random
         /// <summary>
         /// Returns the results of a coin flip, where Heads is True and Tails is False.
         /// </summary>
-        /// <returns></returns>
+        ///
+        /// <returns>
+        /// True if it succeeds, false if it fails.
+        /// </returns>
         public bool GetCoinFlip()
         {
             return GetBool();
         }
 
         /// <summary>
-        /// 
+        /// Gets coin flips.
         /// </summary>
-        /// <param name="number"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="number">   . </param>
+        ///
+        /// <returns>
+        /// The coin flips.
+        /// </returns>
         public List<bool> GetCoinFlips(uint number)
         {
             var output = new List<bool>();
@@ -416,10 +540,14 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// 
+        /// Gets coin flip results.
         /// </summary>
-        /// <param name="number"></param>
-        /// <returns></returns>
+        ///
+        /// <param name="number">   . </param>
+        ///
+        /// <returns>
+        /// The coin flip results.
+        /// </returns>
         public Tuple<int, int> GetCoinFlipResults(uint number)
         {
             var heads = 0;
@@ -441,6 +569,19 @@ namespace Velentr.Math.Random
             return new Tuple<int, int>(heads, tails);
         }
 
+        /// <summary>
+        /// Gets dice roll.
+        /// </summary>
+        ///
+        /// <exception cref="ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+        ///                                                 the required range. </exception>
+        ///
+        /// <param name="faces">        The faces. </param>
+        /// <param name="numberOfDie">  Number of dies. </param>
+        ///
+        /// <returns>
+        /// The dice roll.
+        /// </returns>
         public int GetDiceRoll(int faces, int numberOfDie)
         {
             if (faces == 0 || numberOfDie == 0)
@@ -461,6 +602,16 @@ namespace Velentr.Math.Random
             return total;
         }
 
+        /// <summary>
+        /// Gets dice roll per dice.
+        /// </summary>
+        ///
+        /// <param name="faces">        The faces. </param>
+        /// <param name="numberOfDie">  Number of dies. </param>
+        ///
+        /// <returns>
+        /// The dice roll per dice.
+        /// </returns>
         public List<int> GetDiceRollPerDice(int faces, int numberOfDie)
         {
             var rolls = new List<int>();
@@ -472,36 +623,99 @@ namespace Velentr.Math.Random
             return rolls;
         }
 
+        /// <summary>
+        /// Gets d 6.
+        /// </summary>
+        ///
+        /// <param name="numberOfDie">  Number of dies. </param>
+        ///
+        /// <returns>
+        /// The d 6.
+        /// </returns>
         public int GetD6(int numberOfDie)
         {
             return GetDiceRoll(6, numberOfDie);
         }
 
+        /// <summary>
+        /// Gets d 8.
+        /// </summary>
+        ///
+        /// <param name="numberOfDie">  Number of dies. </param>
+        ///
+        /// <returns>
+        /// The d 8.
+        /// </returns>
         public int GetD8(int numberOfDie)
         {
             return GetDiceRoll(8, numberOfDie);
         }
 
+        /// <summary>
+        /// Gets d 10.
+        /// </summary>
+        ///
+        /// <param name="numberOfDie">  Number of dies. </param>
+        ///
+        /// <returns>
+        /// The d 10.
+        /// </returns>
         public int GetD10(int numberOfDie)
         {
             return GetDiceRoll(10, numberOfDie);
         }
 
+        /// <summary>
+        /// Gets d 12.
+        /// </summary>
+        ///
+        /// <param name="numberOfDie">  Number of dies. </param>
+        ///
+        /// <returns>
+        /// The d 12.
+        /// </returns>
         public int GetD12(int numberOfDie)
         {
             return GetDiceRoll(12, numberOfDie);
         }
 
+        /// <summary>
+        /// Gets d 20.
+        /// </summary>
+        ///
+        /// <param name="numberOfDie">  Number of dies. </param>
+        ///
+        /// <returns>
+        /// The d 20.
+        /// </returns>
         public int GetD20(int numberOfDie)
         {
             return GetDiceRoll(20, numberOfDie);
         }
 
+        /// <summary>
+        /// Gets d 25.
+        /// </summary>
+        ///
+        /// <param name="numberOfDie">  Number of dies. </param>
+        ///
+        /// <returns>
+        /// The d 25.
+        /// </returns>
         public int GetD25(int numberOfDie)
         {
             return GetDiceRoll(25, numberOfDie);
         }
 
+        /// <summary>
+        /// Gets d 99.
+        /// </summary>
+        ///
+        /// <param name="numberOfDie">  Number of dies. </param>
+        ///
+        /// <returns>
+        /// The d 99.
+        /// </returns>
         public int GetD99(int numberOfDie)
         {
             return GetDiceRoll(99, numberOfDie);

@@ -2,7 +2,7 @@
 
 namespace Velentr.Math.Test
 {
-    class LibraryTest
+    internal class LibraryTest
     {
         [Test]
         public void Test()

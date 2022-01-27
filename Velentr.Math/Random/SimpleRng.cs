@@ -16,20 +16,30 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 namespace Velentr.Math.Random
 {
     /// <summary>
-    /// SimpleRNG is a simple random number generator based on 
-    /// George Marsaglia's MWC (multiply with carry) generator.
-    /// Although it is very simple, it passes Marsaglia's DIEHARD
-    /// series of random number generator tests.
+    /// SimpleRNG is a simple random number generator based on George Marsaglia's MWC (multiply with
+    /// carry) generator. Although it is very simple, it passes Marsaglia's DIEHARD series of random
+    /// number generator tests.
     /// 
-    /// Written by John D. Cook
-    /// Lightly modified by Christian Webber
-    /// http://www.johndcook.com
+    /// Written by John D. Cook Lightly modified by Christian Webber http://www.johndcook.com.
+    /// 
     /// </summary>
+    ///
+    /// <seealso cref="Velentr.Math.Random.AbstractRandomGenerator"/>
     public class SimpleRng : AbstractRandomGenerator
     {
+        /// <summary>
+        /// The state a.
+        /// </summary>
         private uint state_a;
+
+        /// <summary>
+        /// The state b.
+        /// </summary>
         private uint state_b;
 
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public SimpleRng()
         {
             // These values are not magical, just the default values Marsaglia used.
@@ -39,11 +49,14 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// 
+        /// Constructor.
         /// </summary>
-        /// <param name="u"></param>
-        /// <param name="v"></param>
-        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
+        ///
+        /// <exception cref="ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+        ///                                                 the required range. </exception>
+        ///
+        /// <param name="state_a">  (Optional) The state a. </param>
+        /// <param name="state_b">  (Optional) The state b. </param>
         public SimpleRng(uint state_a = 521288629, uint state_b = 362436069)
         {
             if ((state_a == 0) && (state_b == 0))
@@ -55,6 +68,15 @@ namespace Velentr.Math.Random
             this.state_b = state_b == 0 ? 362436069 : state_b;
         }
 
+        /// <summary>
+        /// Sets a seed.
+        /// </summary>
+        ///
+        /// <exception cref="ArgumentOutOfRangeException">  Thrown when one or more arguments are outside
+        ///                                                 the required range. </exception>
+        ///
+        /// <param name="state_a">  (Optional) The state a. </param>
+        /// <param name="state_b">  (Optional) The state b. </param>
         public void SetSeed(uint state_a = 521288629, uint state_b = 362436069)
         {
             if ((state_a == 0) && (state_b == 0))
@@ -66,6 +88,9 @@ namespace Velentr.Math.Random
             this.state_b = state_b == 0 ? 362436069 : state_b;
         }
 
+        /// <summary>
+        /// Sets seed from system time.
+        /// </summary>
         public void SetSeedFromSystemTime()
         {
             var x = System.DateTime.Now.ToFileTime();
@@ -73,9 +98,15 @@ namespace Velentr.Math.Random
         }
 
         /// <summary>
-        /// Returns a random uint
+        /// Returns a random uint.
         /// </summary>
-        /// <returns>A random uint</returns>
+        ///
+        /// <param name="minimum">  (Optional) </param>
+        /// <param name="maximum">  (Optional) </param>
+        ///
+        /// <returns>
+        /// A random uint.
+        /// </returns>
         public override uint GetUInt(uint minimum = uint.MinValue, uint maximum = uint.MaxValue)
         {
             if (minimum != uint.MinValue || maximum != uint.MaxValue)
