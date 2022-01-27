@@ -42,3 +42,5 @@ Random | MT19937 | An implementation of a Mersenne Twister generator, originally
 
 # Future Plans
 See list of issues under the Milestones: https://github.com/vonderborch/Velentr.Math/milestones
+
+Most additions to this library will be ad-hoc as I discover needs.
