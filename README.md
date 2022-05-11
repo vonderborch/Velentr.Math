@@ -4,6 +4,18 @@ A variety of helpful math-related helper methods and objects.
 # Installation
 A nuget package is available: [Velentr.Math](https://www.nuget.org/packages/Velentr.Math/)
 
+# MathHelpers
+Method | Description | Min Supported Version | Example Usage
+--------- | ---------- | ----------- | ----------------------------- | -------------
+Clamp | Clamps a number between a range. | 1.0.0 | `_ = MathHelpers.Clamp(11, 0, 10); // Returns 10`, `_ = MathHelpers.Clamp(-1, 0, 10); // Returns 0`, `_ = MathHelpers.Clamp(5, 0, 10); // Returns 5`
+
+# ByteConversion
+Namespace | Object/Class/File | Description | Min Supported Version | Example Usage
+--------- | ---------- | ----------- | ----------------------------- | -------------
+ByteConversion | SizeUnits | The available conversion size units | 1.1.0 | `var unit = SizeUnits.MB`
+ByteConversion | ConvertToSize | Adds an extension to allow converting a long to a double of the appropriate unit, with an optional parameter allowing choosing between 1024 and 1000 for the base unit. | 1.1.0 | `var amount = ((long)2048).ToSizeUnit(SizeUnits.MB) // outputs 2`
+
+
 # Fixed Point Mathematics
 These structs enable usage of fixed-point mathematics, which may be preferable if floating point types do not provide enough precision for a particular use-case.
 
